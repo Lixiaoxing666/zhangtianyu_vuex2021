@@ -3,10 +3,13 @@
 		<h2>我是App组件</h2>
 		<h3>{{msg}}</h3>
 		<Hello/>
+		<hr/>
+		<Test/>
 	</div>
 </template>
 
 <script>
+	import Test from './components/Test'
 	import Hello from './components/Hello'
 
 	export default {
@@ -15,13 +18,7 @@
 				msg:'老刘我想你'
 			}
 		},
-		components:{Hello}
+		components:{Hello,Test}
 	}
 </script>
 
-<style>
-	.demo{
-		background-color: skyblue;
-		padding: 10px;
-	}
-</style>

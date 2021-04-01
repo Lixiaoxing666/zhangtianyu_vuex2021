@@ -1,5 +1,5 @@
 <template>
-	<div class="hello">
+	<div class="demo">
 		<h2>你好啊，{{name}}</h2>
 		<button @click="show">提示信息</button>
 	</div>
@@ -20,8 +20,8 @@
 	}
 </script>
 
-<style>
-	.hello{
+<style scoped>
+	.demo{
 		background-color: orange;
 		padding: 10px;
 	}
