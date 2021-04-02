@@ -2,8 +2,8 @@
 	<div class="todo-container">
     <div class="todo-wrap">
       <Header :addTodo="addTodo"/>
-      <List :todos="todos" :deleteTodo="deleteTodo"/>
-      <Footer/>
+      <List :todos="todos" :deleteTodo="deleteTodo" :updateTodo="updateTodo"/>
+      <Footer :todos="todos"/>
     </div>
   </div>
 </template>
@@ -35,6 +35,19 @@
 				this.todos = this.todos.filter((t)=>{
 					return t.id !== id
 				})
+			},
+			//更新一个
+			updateTodo(id,done){
+				this.todos.forEach((todoObj)=>{
+					if(todoObj.id === id) todoObj.done = done
+				})
+
+				//原来在react中我们如下操作，因为react规定：不能通过非setState的形式修改源数据
+				/* const x = this.todos.map((todoObj)=>{
+					if(todoObj.id === id) return {...todoObj,done}
+					return todoObj
+				})
+				this.todos = x */
 			}
 		}
 	}

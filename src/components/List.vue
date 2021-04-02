@@ -1,6 +1,6 @@
 <template>
 	<ul class="todo-main">
-		<Item :key="todoObj.id" v-for="todoObj in todos" :todoObj="todoObj" :deleteTodo="deleteTodo"/>
+		<Item :key="todoObj.id" v-for="todoObj in todos" :todoObj="todoObj" :deleteTodo="deleteTodo" :updateTodo="updateTodo"/>
 	</ul>
 </template>
 
@@ -17,6 +17,10 @@
 				required:true,
 			},
 			deleteTodo:{
+				type:Function,
+				required:true,
+			},
+			updateTodo:{
 				type:Function,
 				required:true,
 			}

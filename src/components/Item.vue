@@ -13,7 +13,7 @@
 	>
 		<label>
 			<!-- <input type="checkbox" v-model="todoObj.done"/> -->
-			<input type="checkbox" :checked="todoObj.done"/>
+			<input type="checkbox" :checked="todoObj.done" @change="updateT(todoObj.id,$event)"/>
 			<span>{{todoObj.title}}</span>
 		</label>
 		<button 
@@ -33,15 +33,21 @@
 			}
 		},
 		methods:{
+			//删除
 			deleteT(id){
 				if(confirm('确定删除？')){
 					this.deleteTodo(id)
 				}
+			},
+			//响应勾选 or 取消勾选
+			updateT(id,e){
+				this.updateTodo(id,e.target.checked)
 			}
 		},
 		props:{
 			todoObj:Object,
-			deleteTodo:Function
+			deleteTodo:Function,
+			updateTodo:Function
 		},
 	}
 </script>
