@@ -1,7 +1,7 @@
 <template>
 	<div class="todo-container">
     <div class="todo-wrap">
-      <Header :addTodo="addTodo"/>
+      <Header @addtodo="addTodo"/>
       <List v-show="todos.length" :todos="todos" :deleteTodo="deleteTodo" :updateTodo="updateTodo"/>
       <Footer v-show="todos.length" :todos="todos" :updateAll="updateAll" :clearAllDone="clearAllDone"/>
     </div>

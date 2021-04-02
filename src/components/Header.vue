@@ -20,12 +20,13 @@
 				//包装成一个Todo对象
 				const todoObj = {id:Date.now(),title,done:false}
 				//通知App加一个
-				this.addTodo(todoObj)
+				// this.addTodo(todoObj)
+				this.$emit('addtodo',todoObj,100)
 				//清空输入
 				this.title = ''
 			}
 		},
-		props:['addTodo'],
+		// props:['addTodo'],
 	}
 </script>
 
