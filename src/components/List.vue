@@ -1,6 +1,6 @@
 <template>
 	<ul class="todo-main">
-		<Item :key="todoObj.id" v-for="todoObj in todos" :todoObj="todoObj" :x="x"/>
+		<Item :key="todoObj.id" v-for="todoObj in todos" :todoObj="todoObj" :deleteTodo="deleteTodo"/>
 	</ul>
 </template>
 
@@ -10,17 +10,15 @@
 	export default {
 		name:'List',
 		components:{Item},
-		data(){
-			return {
-				x:900
-			}
-		},
 		//声明接收props
 		props:{
 			todos:{
 				type:Array,
 				required:true,
-				default:[]
+			},
+			deleteTodo:{
+				type:Function,
+				required:true,
 			}
 		}
 	}

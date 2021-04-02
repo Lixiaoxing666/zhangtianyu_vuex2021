@@ -1,8 +1,8 @@
 <template>
 	<div class="todo-container">
     <div class="todo-wrap">
-      <Header/>
-      <List :todos="todos"/>
+      <Header :addTodo="addTodo"/>
+      <List :todos="todos" :deleteTodo="deleteTodo"/>
       <Footer/>
     </div>
   </div>
@@ -23,6 +23,18 @@
 					{id:'002',title:'抽烟',done:false},
 					{id:'003',title:'开车',done:true}
 				]
+			}
+		},
+		methods:{
+			//添加一个
+			addTodo(todoObj){
+				this.todos.unshift(todoObj)
+			},
+			//删除一个
+			deleteTodo(id){
+				this.todos = this.todos.filter((t)=>{
+					return t.id !== id
+				})
 			}
 		}
 	}
