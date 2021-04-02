@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>测试一下sessionStorage</title>
+	</head>
+	<body>
+		<button onclick="demo1()">将信息存入sessionStorage</button>
+		<button onclick="demo2()">sessionStorage中读取信息</button>
+		<button onclick="demo3()">删除sessionStorage中的信息</button>
+		<button onclick="demo4()">清空sessionStorage中的信息</button>
+	</body>
+
+	<script type="text/javascript" >
+		const p = {name:'老刘',age:18}
+		
+		function demo1(){
+			sessionStorage.setItem('message',JSON.stringify(p))
+			sessionStorage.setItem('somedata','昌平吴彦祖')
+		}
+
+		function demo2(){
+			const x = sessionStorage.getItem('message')
+			console.log(JSON.parse(x))
+		}
+
+		function demo3(){
+			sessionStorage.removeItem('message')
+		}
+
+		function demo4(){
+			sessionStorage.clear()
+		}
+	</script>
+</html>

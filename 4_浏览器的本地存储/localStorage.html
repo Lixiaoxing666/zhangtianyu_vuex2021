@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>测试一下localStorage</title>
+	</head>
+	<body>
+		<button onclick="demo1()">将信息存入localStorage</button>
+		<button onclick="demo2()">localStorage中读取信息</button>
+		<button onclick="demo3()">删除localStorage中的信息</button>
+		<button onclick="demo4()">清空localStorage中的信息</button>
+	</body>
+
+	<script type="text/javascript" >
+		const p = {name:'老刘',age:18}
+		
+		function demo1(){
+			localStorage.setItem('message',JSON.stringify(p))
+			localStorage.setItem('somedata','昌平吴彦祖')
+		}
+
+		function demo2(){
+			const x = localStorage.getItem('message')
+			console.log(JSON.parse(x))
+		}
+
+		function demo3(){
+			localStorage.removeItem('message')
+		}
+
+		function demo4(){
+			localStorage.clear()
+		}
+	</script>
+</html>
