@@ -31,8 +31,7 @@
 			}
 		},
 		mounted(){
-			console.log(this.$refs.haizi)
-			// this.dn = this.$refs.haizi.computer 
+			this.$refs.haizi.$on('haizi',this.demo)
 		}
 	}
 </script>
