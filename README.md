@@ -62,5 +62,47 @@
 ## 5.todoList案例
 		(1).组件data中的数据、接到的props、methods中的方法、computed中的属性，通过vc均可读取。
 		(2).使用计算属性时，只是读取用get即可，修改记得要用set
-		(3).创建Vue实例时this为vm；创建组件时this为vc，这是Vue强制绑定的，无法修改。
-		(4).methods、computed、watch并没有严格意义上的界定，视具体功能而定，有时用什么都可以实现。
+		(3).methods、computed、watch并没有严格意义上的界定，视具体功能而定，有时用什么都可以实现。
+
+## 6.深度监视
+		(1).使用watch时根据数据的具体结构，决定是否采用深度监视
+		(2).深度监视：
+					(1).Vue中watch中配置的监视，默认只能监测自身一层的数据
+					(2).配置deep:true可以检测所有层次的数据
+
+## 7.浏览器本地存储（webStorage）
+	(1). Cookie、SessionStorage、LocalStorage均被用来在浏览器端存储数据，且都是字符串类型的键值对！
+	(2). 注意：session和SessionStorage不是一个概念！！！
+			 在服务端有一种存储方式叫做：session会话存储，常常被简称session。
+			 SessionStorage和LocalStorage都是浏览器本地存储，统称为Web Storage。
+	(3). 存储内容大小一般支持5-10MB
+	(4). 浏览器端通过 Window.sessionStorage 和 Window.localStorage 属性来实现本地存储机制。
+	(5). 相关API：
+				1. localStorage.setItem('key', 'value');
+							该方法接受一个键和值作为参数，会把键值对添加到存储中，如果键名存在，则更新其对应的值。
+				2. var data = xxxxxStorage.getItem('person');
+							该方法接受一个键名作为参数，返回键名对应的值。
+				3. xxxxxStorage.removeItem('key');
+							该方法接受一个键名作为参数，并把该键名从存储中删除。
+				4. xxxxxStorage.clear()
+							调用该方法会清空存储中的所有键名
+	(6).备注：
+					1.SessionStorage存储的内容会随着浏览器窗口关闭而消失。
+					2.LocalStorage存储的内容，需要手动清除才会消失。
+					3.xxxxxStorage.getItem(xxx)如果xxx对应的value获取不到，那么getItem的返回值是null
+					4.JSON.parse(null)的结果依然是null
+
+## 8.自定义事件
+		一种组件间通信的方式，适用于：子 ===> 父
+		(1).绑定自定义事件：
+				第一种方式：
+						<Demo @haha="test"/>
+				第二种方式：
+						<Demo ref="demo"/>
+						mounted中：this.$refs.demo.$on('haha',this.test)
+		(2).触发自定义事件：
+						this.$emit('haha',数据)
+		(3).提A是父 B是子
+					1.A组件想接收B组件传递的数据，那就：在A组件中给B组件绑定自定义事件，事件的回调在是在A组件自身
+					2.自定义事件的回调在哪，哪才能接收到数据
+					3.适用于 子 ===> 父
