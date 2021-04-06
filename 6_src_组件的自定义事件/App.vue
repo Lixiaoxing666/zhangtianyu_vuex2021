@@ -30,9 +30,9 @@
 				this.dn = c
 			}
 		},
-		mounted(){
+		/* mounted(){
 			this.$refs.haizi.$on('haizi',this.demo)
-		}
+		} */
 	}
 </script>
 

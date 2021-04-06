@@ -78,7 +78,7 @@
 	(3). 存储内容大小一般支持5-10MB
 	(4). 浏览器端通过 Window.sessionStorage 和 Window.localStorage 属性来实现本地存储机制。
 	(5). 相关API：
-				1. localStorage.setItem('key', 'value');
+				1. xxxxxStorage.setItem('key', 'value');
 							该方法接受一个键和值作为参数，会把键值对添加到存储中，如果键名存在，则更新其对应的值。
 				2. var data = xxxxxStorage.getItem('person');
 							该方法接受一个键名作为参数，返回键名对应的值。
@@ -102,7 +102,7 @@
 						mounted中：this.$refs.demo.$on('haha',this.test)
 		(2).触发自定义事件：
 						this.$emit('haha',数据)
-		(3).提A是父 B是子
+		(3).前提：A是父 B是子
 					1.A组件想接收B组件传递的数据，那就：在A组件中给B组件绑定自定义事件，事件的回调在是在A组件自身
 					2.自定义事件的回调在哪，哪才能接收到数据
 					3.适用于 子 ===> 父
