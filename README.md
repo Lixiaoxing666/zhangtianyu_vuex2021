@@ -106,3 +106,54 @@
 					1.A组件想接收B组件传递的数据，那就：在A组件中给B组件绑定自定义事件，事件的回调在是在A组件自身
 					2.自定义事件的回调在哪，哪才能接收到数据
 					3.适用于 子 ===> 父
+
+
+## 9.全局事件总线(GlobalEventBus)
+		一种组件间通信的方式，适用于任意组件间通信
+		(1).安装全局事件总线，在main.js中配置
+					new Vue({
+						.....
+						beforeCreate() {
+							Vue.prototype.$bus = this //安装事件总线
+						},
+						......
+					})
+		(2).A组件想接收数据，则在A组件中给$bus绑定自定义事件,回调留在A组件自身
+					mounted() {
+						this.$bus.$on('xxxx',this.yyyyy)
+					}
+				备注：上方的yyyy是回调，yyy需要配置在组件的methos属性中，切勿直接写回调
+		(3).要提供数据的组件中触发事件：this.$bus.$emit('xxxx',数据)
+		(4).备注：
+						1.谁接数据，谁就$on('xxx-xxx',this.yyy)
+						2.谁发数据，谁就$emit('xxx-xxxx',数据)
+
+## 10.总结pubsub
+		一种组件间通信的方式，适用于任意组件间通信
+		(1).安装pubsub：yarn add pubub-js
+		(2).引入使用: import pubsub from 'pubsub-js'
+		(3).需要接收数据的组件中，订阅消息：
+					在组件的mounted钩子中：
+						this.订阅的id = pubsub.subscribe('xxx',this.yyy)
+						上方的yyy：
+									1.是需要配置在methods中的方法
+									2.yyy啥时候调用？有人发布xxx消息时，yyy被调用
+									3.yyy会收到什么参数？msg,data; 其实msg是消息名(一般不用)、data是数据
+		(4).需要把数据提供给别人的组件中，发布消息
+						pubsub.publish('xxx',数据)
+
+## 11.插槽(slot)
+		也算是一种组件间通信的方式，适用于 父===>子，且传递的是html结构
+		(1).作用：父组件向子组件指定位置中插入html结构
+		(2).分类：
+				默认插槽：<slot></slot>
+				命名插槽：<slot name="s1"></slot>
+				作用域插槽：后期项目中会讲到
+		(3).使用：	
+					父组件中：
+							<template slot="s1">
+								具体html结构
+							</template>
+					子组件中：
+							<slot></slot> 或 <slot name="s1"></slot>
+		
