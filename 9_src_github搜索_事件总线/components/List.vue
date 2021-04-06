@@ -32,7 +32,10 @@
 		},
 		mounted(){
 			this.$bus.$on('update-list',this.updateList)
-		}
+		},
+		beforeDestroy() {
+			this.$bus.$off('update-list')
+		},
 	}
 </script>
 
