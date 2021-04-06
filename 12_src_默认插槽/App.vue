@@ -2,36 +2,17 @@
 	<div class="app">
 
 		<CateGory cateTile="美食">
-			<template slot="cb">
-				<span>各种美食应有尽有</span>
-			</template>
-			<template slot="ct">
-				<img :src="foodUrl" alt="">
-			</template>
+			<img :src="foodUrl" alt="">
 		</CateGory>
 
 		<CateGory cateTile="游戏">
-			<template slot="ct">
-				<ul>
-					<li :key="g.id" v-for="g in gameArr">{{g.name}}</li>
-				</ul>
-			</template>
-			<template slot="cb">
-				<ul>
-					<li>游戏种类全</li>
-					<li>破解工具多</li>
-					<li>汉化版本全</li>
-				</ul>
-			</template>
+			<ul>
+				<li :key="g.id" v-for="g in gameArr">{{g.name}}</li>
+			</ul>
 		</CateGory>
 
 		<CateGory cateTile="电影">
-			<template slot="ct">
-				<video :src="movieUrl" controls></video>
-			</template>
-			<template slot="cb">
-				<h3>各种电影应有尽有</h3>
-			</template>
+			<video :src="movieUrl" controls></video>
 		</CateGory>
 
 	</div>
