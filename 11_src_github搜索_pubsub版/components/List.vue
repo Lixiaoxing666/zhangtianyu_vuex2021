@@ -34,11 +34,11 @@
 		mounted(){
 			//靠事件总线实现数据传递
 			// this.$bus.$on('update-list',this.updateList)
-			Pubsub.subscribe('update-list',this.updateList)
+			this.pid = Pubsub.subscribe('update-list',this.updateList)
 			console.log(this)
 		},
 		beforeDestroy() {
-			Pubsub.unsubscribe('update-list')
+			Pubsub.unsubscribe(this.pid)
 		},
 	}
 </script>
