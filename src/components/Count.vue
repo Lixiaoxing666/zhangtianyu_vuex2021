@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h2>当前求和为:{{sum}}</h2>
+		<h2>当前求和为:{{$store.state.sum}}</h2>
 		<select v-model.number="number">
 			<option value="1">1</option>
 			<option value="2">2</option>
@@ -18,27 +18,30 @@
 		name:'Count',
 		data() {
 			return {
-				sum:0,
+				car:'奔驰',
 				number:1
 			}
 		},
 		methods:{
 			increment(){
-				this.sum += this.number
+				//通过dispatch指挥actions中的jia
+				this.$store.commit('JIA',this.number)
 			},
 			decrement(){
-				this.sum -= this.number
+				//通过dispatch指挥actions中的jian
+				this.$store.commit('JIAN',this.number)
 			},
 			incrementOdd(){
-				if(this.sum % 2){
-					this.sum += this.number
-				}
+				//通过dispatch指挥actions中的jiaOdd
+				this.$store.dispatch('jiaOdd',this.number)
 			},
 			incrementWait(){
-				setTimeout(()=>{
-					this.sum += this.number
-				},500)
+				//通过dispatch指挥actions中的jiaWait
+				this.$store.dispatch('jiaWait',this.number)
 			},
+		},
+		mounted(){
+			console.log(this.$store)
 		}
 	}
 </script>
