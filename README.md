@@ -239,3 +239,49 @@
 					]
 				}
 			]
+
+## 18.路由params参数
+			(1).注册路时声明接收params：
+						path:'detail/:id'
+			(2).路由链接：
+						<router-link to="/home/message/detail/001">点我</router-link>
+			(3).路由组件中接收：
+						this.$route.params.id
+
+## 19.路由query参数
+			(1).注册路时无需声明接收params：
+						path:'detail'
+			(2).路由链接：
+						<router-link to="/home/message/detail?id=001">点我</router-link>
+			(3).路由组件中接收：
+						this.$route.query.id
+
+## 20.命名路由
+		配置：
+				{
+					name:'xinwen' //路由名
+					path:'news',
+					component:News,
+				}
+		作用：简化跳转与传参
+				传统写法：<router-link to="/demo/001?title=标题1">点我</router-link>
+				简化写法：<router-link :to="{
+										name:'xinwen',
+										params:{id:'001'},
+										query:{	title:'标题1'}
+									}">
+									点我
+									</router-link>
+				备注：路由如果配置了name属性，且to写成对象形式，那么params可以不用占位符了，即：
+							不配置name属性：
+									{
+										name:'xiangqing',
+										path:'detail/:id', //一定要声明接收id
+										component:Detail
+									}
+							配置name属性：
+									{
+										name:'xiangqing',
+										path:'detail', //id可以不用声明了
+										component:Detail
+									}
