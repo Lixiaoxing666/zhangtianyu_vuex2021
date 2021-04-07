@@ -11,12 +11,22 @@ Vue.use(vuex)
 
 //准备actions
 const actions = {
-	incrementOdd(miniStore,value){
+/* 	jia(miniStore,value){
+		console.log('组件中有人dispatch了jia')
+		//通过commit指挥mutations里的JIA
+		miniStore.commit('JIA',value)
+	},
+	jian(miniStore,value){
+		console.log('组件中有人dispatch了jian')
+		//通过commit指挥mutations里的JIA
+		miniStore.commit('JIAN',value)
+	}, */
+	jiaOdd(miniStore,value){
 		if(miniStore.state.sum % 2){
 			miniStore.commit('JIA',value)
 		}
 	},
-	incrementWait(miniStore,value){
+	jiaWait(miniStore,value){
 		setTimeout(()=>{
 			miniStore.commit('JIA',value)
 		},500)
@@ -25,17 +35,14 @@ const actions = {
 
 //准备mutations
 const mutations = {
-	INCREMENT(state,value){
+	JIA(state,value){
 		// console.log('JIA',state,value)
 		// console.log('actions中有人commit了JIA，我要进行加了')
 		state.sum += value
 	},
-	DECREMENT(state,value){
+	JIAN(state,value){
 		// console.log('actions中有人commit了JIA，我要进行加了')
 		state.sum -= value
-	},
-	ADDP(state,value){
-		state.persons.unshift(value)
 	}
 }
 
@@ -43,10 +50,7 @@ const mutations = {
 const state = {
 	sum:0,
 	school:'尚硅谷',
-	address:"宏福科技园",
-	persons:[
-		{id:'001',name:'老刘'}
-	]
+	address:"宏福科技园"
 }
 
 //准备getters，getters用于对state中保存的数据进行计算，从而得到一个新的属性
