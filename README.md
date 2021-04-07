@@ -206,3 +206,21 @@
 	(4).使用路由组件标签:
 					<router-link to="/home">首页</router-link> //导航区
 					<router-view></router-view> //展示区
+
+## 16.多级路由（嵌套路由）
+			routes:[
+				{
+					path:'/home',
+					component:Home,
+					children:[
+						{
+							path:'message',
+							component:Message,
+						},
+						{
+							path:'news',
+							component:News
+						}
+					]
+				}
+			]
