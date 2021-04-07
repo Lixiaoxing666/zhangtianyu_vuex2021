@@ -14,10 +14,8 @@
 						}
 					}"
 				> 
-					{{m.title}}
+					{{m.title}} 
 				</router-link>
-				<button @click="pushShow(m)">push查看</button>
-				<button @click="replaceShow(m)">replace查看</button>
 			</li>
 		</ul>
 		<hr/>
@@ -37,27 +35,5 @@
 				]
 			}
 		},
-		methods:{
-			pushShow(m){
-				this.$router.push({
-					name:'xiangqing', //跳转哪个路由（路径的代替者）
-					params:{id:m.id}, //携带params参数
-					query:{ //携带query参数
-						title:m.title,
-						content:m.content
-					}
-				})
-			},
-			replaceShow(m){
-				this.$router.replace({
-					name:'xiangqing', //跳转哪个路由（路径的代替者）
-					params:{id:m.id}, //携带params参数
-					query:{ //携带query参数
-						title:m.title,
-						content:m.content
-					}
-				})
-			}
-		}
 	}
 </script>
