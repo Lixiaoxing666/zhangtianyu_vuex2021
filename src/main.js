@@ -1,18 +1,15 @@
 import Vue from 'vue'
 import App from './App'
-// import vueResource from 'vue-resource'
-import store from './vuex/store'
+import VueRouter from 'vue-router'
+import router from './router'
 
 Vue.config.productionTip = false
-// Vue.use(vueResource)
+Vue.use(VueRouter)
 
-new Vue({
+const vm = new Vue({
 	el:'#app',
 	render: h => h(App),
-	// beforeCreate() {
-	// 	Vue.prototype.$bus = this //安装全局事件总线
-	// },
-	store,
+	router
 })
-
+console.log(vm)
 
