@@ -1,7 +1,6 @@
 <template>
 	<div>
 		<h2>当前求和为:{{$store.state.sum}}</h2>
-		<h4>当前求和放大100倍后：{{$store.getters.bigSum}}</h4>
 		<select v-model.number="number">
 			<option value="1">1</option>
 			<option value="2">2</option>
@@ -26,7 +25,6 @@
 		methods:{
 			increment(){
 				//通过commit指挥mutations中的JIA
-				console.log('**',this.$store)
 				this.$store.commit('JIA',this.number)
 			},
 			decrement(){

@@ -47,22 +47,14 @@ const mutations = {
 
 //准备state
 const state = {
-	sum:0,
-}
-
-//准备getters，getters用于对state中保存的数据进行计算，从而得到一个新的属性
-const getters = {
-	bigSum(state){
-		return state.sum*100
-	}
+	sum:98,
 }
 
 //创建一个store
 const store = new vuex.Store({
 	actions,
 	mutations,
-	state,
-	getters
+	state
 })
 
 //暴露store
