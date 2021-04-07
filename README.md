@@ -158,3 +158,13 @@
 					子组件中：
 							<slot></slot> 或 <slot name="s1"></slot>
 		
+
+## 12.求和案例vuex版
+		(1).项目根目录创建：vuex/store.js 
+					(1.1)应用Vuex插件
+					(1.2)创建store并管理：state、actions、mutations对象
+		(2).组件中读取状态：$store.state.xxxx
+		(3).组件中更新状态：$store.dispatch('动作名',数据)
+		(4).actions中可以写业务逻辑、开启异步任务，若actions中没有任何逻辑，
+				可以在组件中直接$store.commit()去直接对话mutations进行更新状态
+		(5).mutations中尽量不写业务逻辑，不写异步任务，只负责加工状态。
