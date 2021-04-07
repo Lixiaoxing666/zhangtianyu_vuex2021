@@ -17,7 +17,6 @@ const router = new VueRouter({
 	routes:[
 		{
 			// path:'/home*', //*号可以实现模糊匹配
-			name:'zhuye',
 			path:'/home',
 			component:Home,
 			children:[
@@ -30,7 +29,6 @@ const router = new VueRouter({
 					component:Message,
 					children:[
 						{
-							name:'xiangqing',
 							path:'detail',
 							component:Detail
 						}
@@ -39,7 +37,6 @@ const router = new VueRouter({
 			]
 		},
 		{
-			name:'guanyu',
 			path:'/about',
 			component:About
 		},

@@ -11,7 +11,7 @@
 		name:'Detail',
 		computed:{
 			id(){
-				return this.$route.params.id
+				return this.$route.query.id
 			},
 			title(){
 				return this.$route.query.title

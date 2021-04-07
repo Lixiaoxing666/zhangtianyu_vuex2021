@@ -198,16 +198,31 @@
 							}
 						]
 					})
-	(3).注册路由器: main.js
-					import router from './router'
-					new Vue({
-						router
-					})
-	(4).使用路由组件标签:
-					<router-link to="/home">首页</router-link> //导航区
-					<router-view></router-view> //展示区
+		(3).注册路由器: main.js
+						import router from './router'
+						new Vue({
+							router
+						})
+		(4).使用路由组件标签:
+						<router-link to="/home">首页</router-link> //导航区
+						<router-view></router-view> //展示区
 
-## 16.多级路由（嵌套路由）
+## 16.路由的其他配置项
+		1.路由链接点击高亮：<router-link .... active-class="active" ....>
+		2.调整路由工作模式：mode:'history' //hash
+		3.模糊匹配：
+			{
+				path:'/home*'，
+				component:Home
+			}
+
+		4.重定向（兜底）:
+			{
+				path:'/*',
+				redirect:'/about'
+			}
+
+## 17.多级路由（嵌套路由）
 			routes:[
 				{
 					path:'/home',
