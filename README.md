@@ -168,3 +168,41 @@
 		(4).actions中可以写业务逻辑、开启异步任务，若actions中没有任何逻辑，
 				可以在组件中直接$store.commit()去直接对话mutations进行更新状态
 		(5).mutations中尽量不写业务逻辑，不写异步任务，只负责加工状态。
+	
+## 13.Vuex中的getters
+			(1).作用：Vuex中的数据想要经过处理后再使用，可以使用getters
+			(2).写法：
+				const getters = {
+					bigSum(state){
+						return state.sum * 100
+					}
+				}
+			(3).备注：getters不是必须要用，也可以用computed、methods、过滤器实现
+
+## 14.四个mapXxxx的使用
+		使用：mapState、mapGetters自动生成原本我们亲自在computed中写的属性
+		使用：mapMutations、mapActions自动生成原本我们亲自在methods中写的回调
+		注意：以上所有mapXxxx方法在使用时：
+						1.若组件中用的名字 等于 actions、state、mutations、getters中的名字可以简写成数组
+						2.若组件中用的名字 不等于 actions、state、mutations、getters中的名字要写成对象
+
+## 15.路由的基本使用
+		(1).用到的插件库：vue-router
+		(2).创建路由器: router/index.js
+					new VueRouter({
+						mode:'history' //默认值是hash模式
+						routes: [
+							{
+								path: '/about',
+								component: About
+							}
+						]
+					})
+	(3).注册路由器: main.js
+					import router from './router'
+					new Vue({
+						router
+					})
+	(4).使用路由组件标签:
+					<router-link to="/home">首页</router-link> //导航区
+					<router-view></router-view> //展示区
