@@ -1,7 +1,10 @@
 <template>
 	<div>
-		<h2>当前求和为:{{$store.state.sum}}</h2>
-		<h4>当前求和放大100倍后：{{$store.getters.bigSum}}</h4>
+		<h2>当前求和为:{{sum}}</h2>
+		<h4>当前求和放大100倍后：{{bigSum}}</h4>
+		<h4>当前求和-1后：{{smallSum}}</h4>
+		<h4>学校名：{{school}}</h4>
+		<h4>学校地址：{{address}}</h4>
 		<select v-model.number="number">
 			<option value="1">1</option>
 			<option value="2">2</option>
@@ -15,18 +18,59 @@
 </template>
 
 <script>
+	import {mapState,mapGetters} from 'vuex'
 	export default {
 		name:'Count',
 		data() {
 			return {
 				car:'奔驰',
-				number:1
+				number:1,
 			}
+		},
+		computed:{
+			/* sum:function(){
+				return this.$store.state.sum
+			},
+			school(){
+				return this.$store.state.school
+			},
+			address(){
+				return this.$store.state.address
+			}, */
+
+			//借助mapState批量获取vuex中的数据（正常写法）
+			/* ...mapState({
+				he:'sum',
+				ming:'school',
+				dizhi:'address'
+			}), */
+
+			//借助mapState批量获取vuex中的数据（精简写法）
+ 			...mapState(['sum','school','address']),
+
+			/* ********************************************* */
+			/* daHe(){
+				return this.$store.getters.bigSum
+			},
+			xiaoHe(){
+				return this.$store.getters.smallSum
+			}, */
+
+			/* ...mapGetters({
+				daHe:'bigSum',
+				xiaoHe:'smallSum',
+			}) */
+
+			...mapGetters(['bigSum','smallSum'])
+			
+		},
+		mounted(){
+
 		},
 		methods:{
 			increment(){
 				//通过commit指挥mutations中的JIA
-				console.log('**',this.$store)
+				// console.log('**',this.$store)
 				this.$store.commit('JIA',this.number)
 			},
 			decrement(){
@@ -42,8 +86,5 @@
 				this.$store.dispatch('jiaWait',this.number)
 			},
 		},
-		mounted(){
-			console.log(this.$store)
-		}
 	}
 </script>

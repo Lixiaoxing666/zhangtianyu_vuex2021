@@ -36,11 +36,11 @@ const actions = {
 //准备mutations
 const mutations = {
 	JIA(state,value){
-		console.log('actions中有人commit了JIA，我要进行加了')
+		// console.log('actions中有人commit了JIA，我要进行加了')
 		state.sum += value
 	},
 	JIAN(state,value){
-		console.log('actions中有人commit了JIA，我要进行加了')
+		// console.log('actions中有人commit了JIA，我要进行加了')
 		state.sum -= value
 	}
 }
@@ -48,12 +48,17 @@ const mutations = {
 //准备state
 const state = {
 	sum:0,
+	school:'尚硅谷',
+	address:"宏福科技园"
 }
 
 //准备getters，getters用于对state中保存的数据进行计算，从而得到一个新的属性
 const getters = {
 	bigSum(state){
 		return state.sum*100
+	},
+	smallSum(){
+		return state.sum - 1
 	}
 }
 
