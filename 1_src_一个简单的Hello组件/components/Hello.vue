@@ -1,4 +1,5 @@
 <template>
+	<!--todo <template>下只能有一个根标签-->
 	<div class="demo">
 		<h2>你好啊，{{name}}</h2>
 		<button @click="show">提示信息</button>

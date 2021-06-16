@@ -1,5 +1,6 @@
 <template>
 	<ul class="todo-main">
+		<!--todo v-for的使用-->
 		<Item :key="todoObj.id" v-for="todoObj in todos" :todoObj="todoObj" :deleteTodo="deleteTodo" :updateTodo="updateTodo"/>
 	</ul>
 </template>

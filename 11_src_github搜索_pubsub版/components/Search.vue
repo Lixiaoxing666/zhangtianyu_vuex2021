@@ -10,6 +10,7 @@
 
 <script>
 	import axios from 'axios'
+    /*TODO Pubsub消息订阅与发送（在vue中用的少）*/
 	import Pubsub from 'pubsub-js'
 
 	export default {
@@ -33,6 +34,7 @@
 						const {items} = response.data
 						//请求成功了，通过$bus传递数据给List
 						// this.$bus.$emit('update-list',{users:items,isLoading:false,errMsg:''})
+						//TODO Pubsub发布消息
 						Pubsub.publish('update-list',{users:items,isLoading:false,errMsg:''})
 					},
 					error => {

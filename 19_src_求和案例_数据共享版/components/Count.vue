@@ -27,12 +27,12 @@
 			}
 		},
 		computed:{
-			//借助mapState批量获取vuex中的数据（精简写法）
+			//todo 借助mapState批量获取vuex中的数据（精简写法）
  			...mapState(['sum']),
 			...mapGetters(['bigSum','smallSum'])
 		},
 		methods:{
-			//靠mapMutations批量生成操作数据的函数（精简写法）
+			//todo 靠mapMutations批量生成操作数据的函数（精简写法）
 			...mapMutations(['INCREMENT','DECREMENT']),
 			...mapActions(['incrementOdd','incrementWait'])
 		},

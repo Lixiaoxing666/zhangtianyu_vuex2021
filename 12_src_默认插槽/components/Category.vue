@@ -1,6 +1,7 @@
 <template>
 	<div class="cate">
 		<h2 class="title">{{cateTile}}分类</h2>
+		<!--todo <slot/> -->
 		<slot/>
 	</div>
 </template>

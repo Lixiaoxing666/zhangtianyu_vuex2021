@@ -13,22 +13,25 @@
 
 	<script type="text/javascript" >
 		const p = {name:'老刘',age:18}
-		
 		function demo1(){
+		//todo 将信息存入localStorage  localStorage.setItem
 			localStorage.setItem('message',JSON.stringify(p))
 			localStorage.setItem('somedata','昌平吴彦祖')
 		}
 
 		function demo2(){
+            //todo localStorage中读取信息
 			const x = localStorage.getItem('message')
 			console.log(JSON.parse(x))
 		}
 
 		function demo3(){
+            //todo 删除localStorage中的信息
 			localStorage.removeItem('message')
 		}
 
 		function demo4(){
+            //todo 清空localStorage中的信息
 			localStorage.clear()
 		}
 	</script>

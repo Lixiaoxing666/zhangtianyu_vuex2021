@@ -18,6 +18,7 @@
 </template>
 
 <script>
+	// TODO mapState,mapGetters要导入
 	import {mapState,mapGetters} from 'vuex'
 	export default {
 		name:'Count',
@@ -35,6 +36,7 @@
 				return this.$store.state.school
 			},
 			address(){
+				//todo 调用this.$store.state 去store中去取
 				return this.$store.state.address
 			}, */
 
@@ -45,7 +47,7 @@
 				dizhi:'address'
 			}), */
 
-			//借助mapState批量获取vuex中的数据（精简写法）
+			//todo 借助mapState批量获取vuex中的数据（精简写法）
  			...mapState(['sum','school','address']),
 
 			/* ********************************************* */
@@ -60,7 +62,7 @@
 				daHe:'bigSum',
 				xiaoHe:'smallSum',
 			}) */
-
+            //todo 借助mapGetters批量获取vuex中getters的数据（精简写法）
 			...mapGetters(['bigSum','smallSum'])
 			
 		},

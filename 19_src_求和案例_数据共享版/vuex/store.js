@@ -49,7 +49,7 @@ const state = {
 	]
 }
 
-//准备getters，getters用于对state中保存的数据进行计算，从而得到一个新的属性
+//todo 准备getters，getters用于对state中保存的数据进行计算，从而得到一个新的属性
 const getters = {
 	bigSum(state){
 		return state.sum*100

@@ -19,6 +19,9 @@
 		},
 		methods:{
 			sendCar(){
+                //TODO 全局事件总线this.$bus.$emit 触发事件
+                //TODO 调用atguigu绑定的方法（this.$bus.$on('atguigu',this.saveCar)）
+				// 传入参数this.car
 				this.$bus.$emit('atguigu',this.car)
 			},
 			saveNumber(n){
@@ -26,6 +29,7 @@
 			}
 		},
 		mounted(){
+            //同理
 			this.$bus.$on('get-number',this.saveNumber)
 		}
 	}

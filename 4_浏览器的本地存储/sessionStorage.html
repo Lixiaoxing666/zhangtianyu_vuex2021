@@ -13,12 +13,12 @@
 
 	<script type="text/javascript" >
 		const p = {name:'老刘',age:18}
-		
+		//todo 将信息存入sessionStorage sessionStorage.setItem
 		function demo1(){
 			sessionStorage.setItem('message',JSON.stringify(p))
 			sessionStorage.setItem('somedata','昌平吴彦祖')
 		}
-
+        //todo sessionStorage中读取信息
 		function demo2(){
 			const x = sessionStorage.getItem('message')
 			console.log(JSON.parse(x))

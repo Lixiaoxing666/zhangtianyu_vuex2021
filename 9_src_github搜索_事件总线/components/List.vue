@@ -1,5 +1,6 @@
 <template>
 	<div class="row">
+		<!--TODO 条件渲染 切换频繁用v-show -->
 		<h2 v-show="info.isFirst">欢迎使用</h2>
 		<h2 v-show="info.isLoading">loading.....</h2>
 		<h2 v-show="info.errMsg">{{info.errMsg}}</h2>
@@ -27,13 +28,17 @@
 		},
 		methods:{
 			updateList(obj){
-				this.info = {...this.info,...obj}
+                //todo ???这是用后边的覆盖前边的吗？ 是的
+				this.info = {...this.info,  ...obj}
 			}
 		},
+		//TODO 全局事件总线的监听通常放在 mounted() 方法里
 		mounted(){
+            //this.$bus.$emit('update-list',{users:[],isFirst:false,isLoading:true,errMsg:''})
 			this.$bus.$on('update-list',this.updateList)
 		},
 		beforeDestroy() {
+			//todo this.$bus.$off
 			this.$bus.$off('update-list')
 		},
 	}

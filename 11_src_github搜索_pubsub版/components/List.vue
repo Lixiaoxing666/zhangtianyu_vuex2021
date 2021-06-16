@@ -13,6 +13,7 @@
 </template>
 
 <script>
+	/*TODO Pubsub消息订阅与发送（在vue中用的少）*/
 	import Pubsub from 'pubsub-js'
 	export default {
 		name:'List',
@@ -34,6 +35,7 @@
 		mounted(){
 			//靠事件总线实现数据传递
 			// this.$bus.$on('update-list',this.updateList)
+			//TODO 订阅消息
 			this.pid = Pubsub.subscribe('update-list',this.updateList)
 			console.log(this)
 		},

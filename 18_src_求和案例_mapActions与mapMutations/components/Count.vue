@@ -18,6 +18,7 @@
 </template>
 
 <script>
+	//todo mapXXX的方法都需要引入声明
 	import {mapState,mapGetters,mapMutations,mapActions} from 'vuex'
 	export default {
 		name:'Count',
@@ -82,7 +83,7 @@
 				decrement:'JIAN'
 			}), */
 
-			//靠mapMutations批量生成操作数据的函数（精简写法）
+			//todo 靠mapMutations批量生成操作数据的函数（精简写法）
 			...mapMutations(['JIA','JIAN']),
 
 			/* ********************************** */

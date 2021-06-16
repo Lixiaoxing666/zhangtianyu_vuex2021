@@ -1,6 +1,7 @@
 <template>
 	<div>
 		<h2>当前求和为:{{sum}}</h2>
+<!--TODO v-model.number表明绑定的是个数值，不是字符串，否则加法+ 会变成字符串拼接-->-->
 		<select v-model.number="number">
 			<option value="1">1</option>
 			<option value="2">2</option>
@@ -30,11 +31,13 @@
 				this.sum -= this.number
 			},
 			incrementOdd(){
+                //TODO sum为奇数才执行if
 				if(this.sum % 2){
 					this.sum += this.number
 				}
 			},
 			incrementWait(){
+                //
 				setTimeout(()=>{
 					this.sum += this.number
 				},500)

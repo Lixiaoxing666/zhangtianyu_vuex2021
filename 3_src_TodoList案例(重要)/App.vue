@@ -14,6 +14,7 @@
 	import Footer from './components/Footer'
 
 	export default {
+	    //todo 给组件起个名，这个名在渲染时展示 其他无用
 		name:'App',
 		components:{Header,List,Footer},
 		data(){
@@ -28,6 +29,9 @@
 		methods:{
 			//添加一个
 			addTodo(todoObj){
+                //todo unshift()方法将一个或多个元素添加到数组的开头，
+                // todo push() 方法将一个或多个元素添加到数组的末尾，并返回该数组的新长度。
+                // 并返回该数组的新长度(该方法修改原有数组)。
 				this.todos.unshift(todoObj)
 			},
 			//删除一个
@@ -48,6 +52,14 @@
 					return todoObj
 				})
 				this.todos = x */
+
+                /*或者
+                 this.todos=this.todos.map((t)=>{
+                if(t.id===id) {
+                    t.done=!t.done
+                }
+                return t
+            })*/
 			},
 			//更新所有
 			updateAll(done){

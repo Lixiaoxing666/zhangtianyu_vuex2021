@@ -16,6 +16,7 @@
 		},
 		methods:{
 			sendComputer(){
+                //todo 触发事件 及传参   父组件绑定事件监听的时候：this.$refs.haizi.$on('haizi',this.demo)
 				this.$emit('fangjiale',this.computer)
 			}
 		}

@@ -16,21 +16,39 @@
 		props:['todos','updateAll','clearAllDone'],
 		methods:{
 			updateA(e){
+                //
 				this.updateAll(e.target.checked)
 			},
+			//清除已完成任务
 			clearAllD(){
 				this.clearAllDone()
 			}
 		},
 		computed:{
 			doneCount(){
+		//todo reduce() 方法对数组中的每个元素执行一个由您提供
+		// 的reducer函数(升序执行)，将其结果汇总为单个返回值。
+		//https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+				/*reduce4个参数
+				Accumulator (acc) (累计器)
+				Current Value (cur) (当前值)
+				Current Index (idx) (当前索引)
+				Source Array (src) (源数组)
+				您的 reducer 函数的返回值分配给累计器，该返回值在数组的每个迭代中被记住，
+				并最后成为最终的单个结果值。
+语法arr.reduce(callback(accumulator, currentValue[, index[, array]])[, initialValue])
+*/
+				//todo 这里注意箭头函数省略大括号有自动return功能 不省略大括号得加return
 				return this.todos.reduce((pre,current)=> pre + (current.done ? 1 : 0),0)
 			},
+			//todo 没有set只有get的简写方式
 			total(){
 				return this.todos.length
 			},
+
 			isAll:{
 				get(){
+				    //全部勾选时，全选框也要为true
 					return this.doneCount === this.total && this.total > 0
 				},
 				set(value){

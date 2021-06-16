@@ -12,7 +12,7 @@
           <!-- <a class="list-group-item" href="./about.html">About</a>
           <a class="list-group-item" href="./home.html">Home</a> -->
 
-					<!-- Vue中我们使用 <router-link> -->
+					<!-- TODO Vue中我们使用 <router-link>标签进行页面的跳转 -->
 					<router-link class="list-group-item" to="/about">About</router-link>
           <router-link class="list-group-item" to="/home">Home</router-link>
         </div>
@@ -20,6 +20,7 @@
       <div class="col-xs-6">
         <div class="panel">
           <div class="panel-body">
+              <!--TODO router-view？？？ -->
 						<router-view></router-view>
           </div>
         </div>

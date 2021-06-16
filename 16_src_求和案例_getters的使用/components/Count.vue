@@ -1,6 +1,7 @@
 <template>
 	<div>
 		<h2>当前求和为:{{$store.state.sum}}</h2>
+		<!--TODO $store.getters.bigSum-->
 		<h4>当前求和放大100倍后：{{$store.getters.bigSum}}</h4>
 		<select v-model.number="number">
 			<option value="1">1</option>

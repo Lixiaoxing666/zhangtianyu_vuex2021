@@ -2,9 +2,11 @@
 	<div class="app">
 
 		<CateGory cateTile="美食">
+			<!--TODO 给插槽命名 -->
 			<template slot="cb">
 				<span>各种美食应有尽有</span>
 			</template>
+
 			<template slot="ct">
 				<img :src="foodUrl" alt="">
 			</template>

@@ -3,11 +3,12 @@
 		<h2>我是App组件</h2>
 		<h3>Child给我一台电脑:{{dn}}</h3>
 		<br/>
-
-		<!-- 给Child组件实例绑定自定义事件（第一种写法） -->
+		<!--TODO 自定义事件(组件间通信的一种方式）：比较适合子给父传东西-->
+		<!--todo 绑定事件监听2种方法-->
+		<!--todo  给Child组件实例绑定自定义事件（第一种写法） -->
 		<!-- <Child ref="haizi"/> -->
 
-		<!-- 给Child组件实例绑定自定义事件（第二种写法） -->
+		<!--todo 给Child组件实例绑定自定义事件（第二种写法） -->
 		<Child @fangjiale="demo" ref="haizi"/>
 	</div>
 </template>
@@ -31,6 +32,7 @@
 			}
 		},
 		/* mounted(){
+            //todo 绑定事件监听第一种方式  触发事件的时候this.$emit('haizi', 传给demo方法的参数)
 			this.$refs.haizi.$on('haizi',this.demo)
 		} */
 	}

@@ -1,7 +1,8 @@
 <template>
 	<div class="app">
-
+<!--todo 给子组件传递名为cateTile的字符串 -->
 		<CateGory cateTile="美食">
+			<!--TODO 自定义的子标签CateGory的标签体中间的内容默认不展示  想展示在子标签写<slot/>-->
 			<img :src="foodUrl" alt="">
 		</CateGory>
 
@@ -12,6 +13,7 @@
 		</CateGory>
 
 		<CateGory cateTile="电影">
+			<!--todo video:这是一段视频  controls：播放键等-->
 			<video :src="movieUrl" controls></video>
 		</CateGory>
 

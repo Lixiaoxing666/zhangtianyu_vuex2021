@@ -18,6 +18,9 @@
 		components:{Header,List,Footer},
 		data(){
 			return {
+                //todo JSON.parse() 方法用来解析JSON字符串，构造由字符串描述的JavaScript值或对象。
+                //TODO JSON.parse()解析对象字符串得到对象，解析数组字符串得到数组 这里就是得到数组 里面是对象
+                //TODO 注意todos初始值会是[] 空数组
 				todos:JSON.parse(localStorage.getItem('todos')) || []
 			}
 		},
@@ -60,9 +63,13 @@
 		},
 		watch:{
 			todos:{
+                //todo 开启深度监视：可以监视数组里对象某一个属性的改变 （普通监视不行）
+                // TODO 对todos的增查删改都要更改localStorage 为了不在每个crud方法里都操作
+                // TODO 一遍localStorage 采用深度监视 一旦发生变化就重新设置todos
 				deep:true, //开启深度监视
 				handler(value){
 					console.log('todos被改了')
+                    //todo JSON.stringify() 方法将一个 JavaScript对象或值转换为 JSON 字符串
 					localStorage.setItem('todos',JSON.stringify(value))
 				}
 			}

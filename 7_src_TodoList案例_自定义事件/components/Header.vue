@@ -21,6 +21,7 @@
 				const todoObj = {id:Date.now(),title,done:false}
 				//通知App加一个
 				// this.addTodo(todoObj)
+				//TODO 触发事件 @addtodo="addTodo"
 				this.$emit('addtodo',todoObj,100)
 				//清空输入
 				this.title = ''

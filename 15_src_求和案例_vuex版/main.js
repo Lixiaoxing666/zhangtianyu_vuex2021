@@ -1,10 +1,11 @@
 import Vue from 'vue'
 import App from './App'
 // import vueResource from 'vue-resource'
+/*TODO 入口文件引入自定义的vuex/store.js  */
 import store from './vuex/store'
 
 Vue.config.productionTip = false
-// Vue.use(vueResource)
+
 
 new Vue({
 	el:'#app',
@@ -12,7 +13,7 @@ new Vue({
 	// beforeCreate() {
 	// 	Vue.prototype.$bus = this //安装全局事件总线
 	// },
-	store,
+	store, /*todo 声明store*/
 })
 
 
