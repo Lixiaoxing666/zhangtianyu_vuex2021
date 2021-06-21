@@ -33,7 +33,7 @@
 						console.log('成功了',response.data.items)
 						const {items} = response.data
 						//请求成功了，通过$bus传递数据给List
-						// this.$bus.$emit('update-list',{users:items,isLoading:false,errMsg:''})
+						//todo this.$bus.$emit('update-list',{users:items,isLoading:false,errMsg:''})
 						//TODO Pubsub发布消息
 						Pubsub.publish('update-list',{users:items,isLoading:false,errMsg:''})
 					},

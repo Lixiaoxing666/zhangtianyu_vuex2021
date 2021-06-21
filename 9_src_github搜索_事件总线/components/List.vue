@@ -38,7 +38,7 @@
 			this.$bus.$on('update-list',this.updateList)
 		},
 		beforeDestroy() {
-			//todo this.$bus.$off
+			//todo this.$bus.$off全局事件总线的销毁
 			this.$bus.$off('update-list')
 		},
 	}

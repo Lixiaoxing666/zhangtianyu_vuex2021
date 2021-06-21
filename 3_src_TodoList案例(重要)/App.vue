@@ -1,8 +1,10 @@
 <template>
 	<div class="todo-container">
     <div class="todo-wrap">
-      <Header :addTodo="addTodo"/>
-      <List v-show="todos.length" :todos="todos" :deleteTodo="deleteTodo" :updateTodo="updateTodo"/>
+        <!--TODO 给子组件传一个名为addTodo1的方法 值是自己的addTodo-->
+      <Header :addTodo1="addTodo"/>
+        <!--TODO 给子组件传一个名为todos1的方法 值是自己的todos-->
+      <List v-show="todos.length" :todos1="todos" :deleteTodo="deleteTodo" :updateTodo="updateTodo"/>
       <Footer v-show="todos.length" :todos="todos" :updateAll="updateAll" :clearAllDone="clearAllDone"/>
     </div>
   </div>
@@ -37,6 +39,7 @@
 			//删除一个
 			deleteTodo(id){
 				this.todos = this.todos.filter((t)=>{
+                    //todo filter返回不等于id的 就是删除id的
 					return t.id !== id
 				})
 			},

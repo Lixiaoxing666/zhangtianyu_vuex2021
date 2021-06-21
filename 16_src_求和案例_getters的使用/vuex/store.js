@@ -66,6 +66,7 @@ const store = new vuex.Store({
     actions,
     mutations,
     state,
+    //todo getters
     getters
 })
 

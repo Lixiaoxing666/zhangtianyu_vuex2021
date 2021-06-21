@@ -18,9 +18,10 @@
 		<label> 标签的 for 属性应当与相关元素的 id 属性相同。
 		-->
 		<label>
-			<!--todo 改变todoObj.done方法：v-model数据双向绑定 这种方式可能报错（只适用于改对象的某个属性），
+			<!--todo 第一种改变todoObj.done方法：v-model数据双向绑定 这种方式可能报错（只适用于改对象的某个属性），
 			其他的采用第二种-->
 			<!-- <input type="checkbox" v-model="todoObj.done"/> -->
+
 			<!--TODO 第2种：改变todoObj.done：:checked单向绑定 通过父传过来的方法操作
 			todo  $event.target.checked是单选框的状态：true or false-->
 			<input type="checkbox" :checked="todoObj.done" @change="updateT(todoObj.id, $event)"/>

@@ -1,7 +1,7 @@
 <template>
 	<ul class="todo-main">
 		<!--todo v-for的使用-->
-		<Item :key="todoObj.id" v-for="todoObj in todos" :todoObj="todoObj" :deleteTodo="deleteTodo" :updateTodo="updateTodo"/>
+		<Item :key="todoObj.id" v-for="todoObj in todos1" :todoObj="todoObj" :deleteTodo="deleteTodo" :updateTodo="updateTodo"/>
 	</ul>
 </template>
 
@@ -13,7 +13,7 @@
 		components:{Item},
 		//声明接收props
 		props:{
-			todos:{
+			todos1:{
 				type:Array,
 				required:true,
 			},

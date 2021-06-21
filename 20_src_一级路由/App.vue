@@ -21,6 +21,7 @@
         <div class="panel">
           <div class="panel-body">
               <!--TODO router-view？？？ -->
+              <!-- TODO 路由匹配到的组件将显示在这里router-view -->
 						<router-view></router-view>
           </div>
         </div>

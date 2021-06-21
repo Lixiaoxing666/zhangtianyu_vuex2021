@@ -24,7 +24,7 @@
 			search(){
 				//TODO 获取用户的输入 或者这样const keyWord=this.keyWord
 				const {keyWord} = this
-				//请求前，通过$bus传递数据给List
+				//TODO 请求前，通过$bus传递数据给List
 				this.$bus.$emit('update-list',{users:[],isFirst:false,isLoading:true,errMsg:''})
 				//axios发送请求
 				axios.get('https://api.github.com/search/users',
@@ -36,7 +36,7 @@
 					response => {
 						console.log('成功了',response.data.items)
 						const {items} = response.data
-						//请求成功了，通过$bus传递数据给List
+						//TODO 请求成功了，通过$bus传递数据给List
 						this.$bus.$emit('update-list',{users:items,isLoading:false,errMsg:''})
 					},
 					error => {

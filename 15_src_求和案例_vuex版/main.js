@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import App from './App'
-// import vueResource from 'vue-resource'
-/*TODO 入口文件引入自定义的vuex/store.js  */
-import store from './vuex/store'
 
+/*TODO 入口文件引入自定义的文件vuex/store.js  */
+import store from './vuex/store'
+//关闭运行开模式提示
 Vue.config.productionTip = false
 
 

@@ -273,7 +273,8 @@
 									点我
 									</router-link>
 				备注：路由如果配置了name属性，且to写成对象形式，那么params可以不用占位符了，即：
-							不配置name属性：
+				
+							如果不配置name属性：
 									{
 										name:'xiangqing',
 										path:'detail/:id', //一定要声明接收id

@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App'
-/*已抛弃的库 了解*/
+/*todo vueResource已抛弃的库 了解 功能相当于axios*/
 import vueResource from 'vue-resource'
 
 Vue.config.productionTip = false

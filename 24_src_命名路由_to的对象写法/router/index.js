@@ -29,8 +29,9 @@ const router = new VueRouter({
 					path:'message',
 					component:Message,
 					children:[
+
 						{
-							name:'xiangqing',
+							name:'xiangqing',   //TODO 路由名 作用：简化跳转与传参 具体见readme.md ##20
 							path:'detail/:id',
 							component:Detail
 						}

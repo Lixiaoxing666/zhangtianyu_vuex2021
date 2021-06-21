@@ -1,6 +1,7 @@
 <template>
 	<div class="todo-container">
     <div class="todo-wrap">
+        <!--TODO 使用自定义事件的第二种方式： -->
       <Header @addtodo="addTodo"/>
       <List v-show="todos.length" :todos="todos" :deleteTodo="deleteTodo" :updateTodo="updateTodo"/>
       <Footer v-show="todos.length" :todos="todos" :updateAll="updateAll" :clearAllDone="clearAllDone"/>

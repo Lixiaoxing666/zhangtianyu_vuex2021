@@ -84,6 +84,9 @@
 			}), */
 
 			//todo 靠mapMutations批量生成操作数据的函数（精简写法）
+			//TODO 省略了this.$store.commit('JIAN',this.number)这种写法
+			//TODO 注意：...mapMutations和...mapActions都是在methods里写，
+			// TODO 而...mapState和...mapGetters都是写在computed（一旦发生变化就会读取）
 			...mapMutations(['JIA','JIAN']),
 
 			/* ********************************** */
@@ -103,7 +106,8 @@
 				incrementWait:'jiaWait'
 			}) */
 
-			//靠mapActions批量生成操作数据的函数（精简写法）
+			//TODO 靠mapActions批量生成操作数据的函数（精简写法）
+			//TODO this.$store.dispatch('jiaWait',this.number)
 			...mapActions(['jiaOdd','jiaWait'])
 			
 		},

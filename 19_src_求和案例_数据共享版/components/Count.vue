@@ -36,6 +36,8 @@
 			...mapMutations(['INCREMENT','DECREMENT']),
 			...mapActions(['incrementOdd','incrementWait'])
 		},
+        //TODO 注意：...mapMutations和...mapActions都是在methods里写，
+        // TODO 而...mapState和...mapGetters都是写在computed（一旦发生变化就会读取）
 		mounted(){
 			/* const x = mapMutations({
 				increment:'JIA',

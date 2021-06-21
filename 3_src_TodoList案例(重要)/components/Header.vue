@@ -26,14 +26,14 @@
 				if(!title.trim()) return alert('输入不能为空！')
 				//包装成一个Todo对象
 				const todoObj = {id:Date.now(),title,done:false}
-				//TODO 通知App加一个 addTodo是父组件传给他的方法  :addTodo="addTodo"
-				this.addTodo(todoObj)
+				//TODO 通知App加一个 addTodo1是父组件传给他的方法  :addTodo1="addTodo"
+				this.addTodo1(todoObj)
 				//清空输入
 				this.title = ''
 			}
 		},
 		//TODO 父组件传下来的属性都要进行声明接收
-		props:['addTodo'],
+		props:['addTodo1'],
 	}
 </script>
 

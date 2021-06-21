@@ -11,8 +11,7 @@ Vue.use(VueRouter)
 const vm = new Vue({
 	el:'#app',
 	render: h => h(App),
-	//TODO 声明使用router
-	router
+	router      //TODO 声明使用router
 })
 console.log(vm)
 

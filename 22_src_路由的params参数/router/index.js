@@ -28,6 +28,7 @@ const router = new VueRouter({
 					path:'message',
 					component:Message,
 					children:[
+						/*TODO 注册路时声明接收params： 用/： */
 						{
 							path:'detail/:id/:title/:content',
 							component:Detail

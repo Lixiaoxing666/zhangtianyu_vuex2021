@@ -69,8 +69,8 @@
 		watch:{
             //TODO 监视谁
 			todos:{
-                //todo 开启深度监视：可以监视数组里对象某一个属性的改变 （普通监视不行）
-                // TODO 对todos的增查删改都要更改localStorage 为了不在每个crud方法里都操作
+                //todo 开启深度监视：可以监视数组里对象某一个属性的改变 （普通监视不行）平时不开 浪费性能
+                // TODO 对todos的增查删改都要更改localStorage 为了不在每个crud方法里都操作--
                 // TODO 一遍localStorage 采用深度监视 一旦发生变化就重新设置todos
 				deep:true,
 				handler(value){

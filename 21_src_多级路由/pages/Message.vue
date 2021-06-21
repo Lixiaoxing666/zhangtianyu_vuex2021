@@ -3,6 +3,7 @@
 		<ul>
 			<li :key="m.id" v-for="m in messageArr">
 				<!-- <a href="/message1"> {{m.title}} </a> -->
+				<!--TODO 下一节：路由传参-->
 				<router-link to="/home/message/detail"> {{m.title}} </router-link>
 			</li>
 		</ul>

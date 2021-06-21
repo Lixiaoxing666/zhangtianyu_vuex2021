@@ -40,14 +40,15 @@
 				return this.$store.state.address
 			}, */
 
-			//借助mapState批量获取vuex中的数据（正常写法）
+			//todo 借助mapState批量获取vuex中的数据（正常写法）
 			/* ...mapState({
 				he:'sum',
 				ming:'school',
 				dizhi:'address'
 			}), */
 
-			//todo 借助mapState批量获取vuex中的数据（精简写法）
+			//todo 借助mapState批量获取vuex中的数据（精简写法）  这样我们省略了this.$store.state.sum写法
+			// TODO 直接在标签使用sum即可
  			...mapState(['sum','school','address']),
 
 			/* ********************************************* */
@@ -63,6 +64,7 @@
 				xiaoHe:'smallSum',
 			}) */
             //todo 借助mapGetters批量获取vuex中getters的数据（精简写法）
+            //TODO 省略了$store.getters.bigSum写法
 			...mapGetters(['bigSum','smallSum'])
 			
 		},

@@ -35,7 +35,7 @@
 		mounted(){
 			//靠事件总线实现数据传递
 			// this.$bus.$on('update-list',this.updateList)
-			//TODO 订阅消息
+			//TODO 订阅消息(接收消息）
 			this.pid = Pubsub.subscribe('update-list',this.updateList)
 			console.log(this)
 		},

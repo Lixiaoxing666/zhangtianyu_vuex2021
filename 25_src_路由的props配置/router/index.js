@@ -33,7 +33,7 @@ const router = new VueRouter({
 							name:'xiangqing',
 							path:'detail/:id',
 							component:Detail,
-
+							//TODO 路由props三种写法
 							//第一种写法：props值为对象，该对象中所有的key-value的组合最终都传给Detail组件作为props
 							// props:{a:900}
 

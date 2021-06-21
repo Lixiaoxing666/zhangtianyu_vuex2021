@@ -67,6 +67,7 @@ const state = {
 
 //todo 第2步：创建一个store
 const store = new vuex.Store({
+	//TODO vuex store 的三大核心 state  actions  mutations
 	actions,
 	mutations,
 	state
