@@ -10,7 +10,7 @@
 						<router-link to="/home/message/detail/001">点我</router-link>
 			(3).路由组件中接收：
 						this.$route.params.id-->
-				<!--TODO 路由传参params参数 -->
+				<!--TODO 路由传参params参数 直接跟在路径后面 传的时候不需要： router接收时需要： -->
 				<router-link :to="`/home/message/detail/${m.id}/${m.title}/${m.content}`"> {{m.title}} </router-link>
 			</li>
 		</ul>

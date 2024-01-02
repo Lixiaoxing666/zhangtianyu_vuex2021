@@ -11,6 +11,7 @@
 		name:'Detail',
 		computed:{
 			id(){
+                //TODO 使用query参数this.$route.query.title
 				return this.$route.query.id
 			},
 			title(){

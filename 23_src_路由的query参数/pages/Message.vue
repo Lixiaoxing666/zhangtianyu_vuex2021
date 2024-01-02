@@ -3,7 +3,7 @@
 		<ul>
 			<li :key="m.id" v-for="m in messageArr">
 				<!-- <a href="/message1"> {{m.title}} </a> -->
-				<!--TODO ## 19.路由query参数
+				<!--TODO ## 19.路由query参数用问号？开头
 			(1).注册路时无需声明接收params：
 						path:'detail'
 			(2).路由链接：

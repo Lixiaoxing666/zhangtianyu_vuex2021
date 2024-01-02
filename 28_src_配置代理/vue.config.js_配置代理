@@ -1,11 +1,11 @@
 module.exports = {
-  lintOnSave:false, //关闭所有语法检查
+  lintOnSave:false, //TODO 关闭所有语法检查
 	devServer: {
 		proxy: {
-		'/api1': {// 匹配所有以 '/api'开头的请求路径
-			target: 'http://localhost:5000',// 代理目标的基础路径
+		'/api1': {    //TODO  匹配所有以 '/api'开头的请求路径
+			target: 'http://localhost:5000',    // TODO 代理目标的基础路径 要往哪发，代理帮你发，你自己发不了
 			changeOrigin: true,
-			pathRewrite: {'^/api1': ''}
+			pathRewrite: {'^/api1': ''}          //TODO 往后端发的时候去掉 api1
 		},
 		'/api2': {// 匹配所有以 '/api'开头的请求路径
 			target: 'http://localhost:5001',// 代理目标的基础路径
@@ -15,3 +15,8 @@ module.exports = {
 	}
 }
 }
+/*TODO 更改完以后，还需要我们把src/mains.js  中的（有可能不在那）
+todo 去找axios的baseURL 更改baseURL为  '/api'    配置跨域以后 baseURL不能是全路径了
+axios.defaults.baseURL = 'http://www.baidu.com'  改成
+axios.defaults.baseURL = '/apis'
+然后就可以了*/

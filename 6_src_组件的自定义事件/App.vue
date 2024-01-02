@@ -9,7 +9,7 @@
 		<!-- <Child ref="haizi"/> -->
 
 		<!--todo （第二种写法）给Child组件实例绑定自定义事件
-		第二种方法不就是给子组件传了个方法 然后子组件不用声明接收了 -->
+		todo 第二种方法不就是给子组件传了个方法 然后子组件不用声明接收了 -->
 		<Child @fangjiale="demo" ref="haizi"/>
 	</div>
 </template>

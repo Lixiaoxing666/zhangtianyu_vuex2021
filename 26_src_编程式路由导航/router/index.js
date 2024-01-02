@@ -59,7 +59,7 @@ const router = new VueRouter({
 			path:'/about',
 			component:About
 		},
-		{ //redirect实现最后的匹配
+		{ //TODO   path:'/*',   redirect实现最后的匹配
 			path:'/*',
 			redirect:'/about'
 		}

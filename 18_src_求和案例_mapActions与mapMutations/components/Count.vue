@@ -29,6 +29,8 @@
 			}
 		},
 		computed:{
+            //TODO 方法什么时候会被调用？1.有人读取的时候; 2.依赖的数据发生变化时
+            //TODO 即简写方式省略掉了get()声明  （即：只有get方法时，不需要set时,才可以简写）
 			/* sum:function(){
 				return this.$store.state.sum
 			},

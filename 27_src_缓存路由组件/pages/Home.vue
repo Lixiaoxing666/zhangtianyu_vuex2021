@@ -10,6 +10,7 @@
 					<router-link  class="list-group-item" active-class="active" to="/home/message">Message</router-link>
 				</li>
 			</ul>
+			<!--TODO 缓存路由组件：在点了别的路由在点回来 输入框里的内容还在 -->
 			<keep-alive include="News">
 				<router-view></router-view>
 			</keep-alive>

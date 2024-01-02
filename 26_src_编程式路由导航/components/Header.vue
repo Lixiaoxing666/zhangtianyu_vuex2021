@@ -16,12 +16,15 @@
 		name:'Header',
 		methods: {
 			houtui(){
+				//TODO 后退
 				this.$router.back()
 			},
 			qianjin(){
+                //TODO 前进
 				this.$router.forward()
 			},
 			test(){
+                //TODO 往后退两步 正值为前进
 				this.$router.go(-2)
 			}
 		},	

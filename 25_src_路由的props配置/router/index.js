@@ -34,14 +34,15 @@ const router = new VueRouter({
 							path:'detail/:id',
 							component:Detail,
 							//TODO 路由props三种写法
-							//第一种写法：props值为对象，该对象中所有的key-value的组合最终都传给Detail组件作为props
+							//TODO 第一种写法：props值为对象，该对象中所有的key-value的组合最终都传给Detail组件作为props
 							// props:{a:900}
 
-							//第二种写法：props值为布尔值，布尔值为true，则把路由收到的所有params参数作为props传给Detail
+							//TODO 第二种写法：props值为布尔值，布尔值为true，则把路由收到的所有params参数作为props传给Detail
+							//TODO 常用
 							// props:true
 
-							//第三种写法：props值为函数，该函数返回的对象中每一组key-value都会作为props传给Detail
-							props(r){
+							//TODO 第三种写法：props值为函数，该函数返回的对象中每一组key-value都会作为props传给Detail
+							props(r){   //todo 这里的形参r 就是$route 里面包含本组件Detail的一切信息
 								return {
 									id:r.params.id,
 									title:r.query.title,

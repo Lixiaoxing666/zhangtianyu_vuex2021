@@ -286,3 +286,125 @@
 										path:'detail', //id可以不用声明了
 										component:Detail
 									}
+									
+									
+## 编程式路由导航（我自己加的笔记）
+<!--todo 与react一样 router-link里加replace 不会给回退留下痕迹  不加默认push-->
+
+
+ //todo 抛开router-link实现路由跳转
+				this.$router.push({
+					//TODO 下面相当于吧router-link里的都粘过来了 m是遍历的项
+					name:'xiangqing', //跳转哪个路由（路径的代替者）
+					params:{id:m.id}, //携带params参数
+					query:{ //携带query参数
+						title:m.title,
+						content:m.content
+					}
+				})
+## 缓存路由组件
+在导航的地方 Home.vue里router-view外包裹
+<!--TODO 缓存路由组件：在点了别的路由在点回来 输入框里的内容还在 -->
+			<keep-alive include="News">
+				<router-view></router-view>
+			</keep-alive>
+			
+## vue脚手架配置代理总结
+
+
+
+方法一
+
+在vue.config.js中追加如下配置
+
+    devServer:{
+      proxy:"http://localhost:5000"
+    }
+
+说明：
+
+1. 优点：配置简单，前端请求资源时可以不加任何前缀。
+2. 缺点：不能配置多个代理，不能灵活的控制请求是否走代理。
+3. 工作方式：若按照上述配置代理，当请求了前端不存在的资源时，那么该请求会转发给服务器 （有限匹配前端资源）
+
+
+
+方法二
+
+编写vue.config.js配置具体代理规则：
+
+    module.exports = {
+    	devServer: {
+          proxy: {
+          '/api1': {// 匹配所有以 '/api'开头的请求路径
+            target: 'http://localhost:5000',// 代理目标的基础路径
+            changeOrigin: true,
+            pathRewrite: {'^/api1': ''}
+          },
+          '/api2': {// 匹配所有以 '/api'开头的请求路径
+            target: 'http://localhost:5001',// 代理目标的基础路径
+            changeOrigin: true,
+            pathRewrite: {'^/api2': ''}
+          }
+        }
+      }
+    }
+
+说明：
+
+1. 优点：可以配置多个代理，可以灵活的控制请求是否走代理。
+2. 缺点：配置繁琐，前端请求资源时必须加前缀。
+
+## elementUI的使用
+官网：https://element.eleme.cn/#/zh-CN/component/quickstart
+完整引入（不行，要按需）
+在 main.js 中写入以下内容：
+
+import Vue from 'vue';
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+import App from './App.vue';
+
+Vue.use(ElementUI);
+new Vue({
+  el: '#app',
+  render: h => h(App)
+});
+##按需引入
+借助 babel-plugin-component，我们可以只引入需要的组件，以达到减小项目体积的目的。
+
+首先，安装 babel-plugin-component：
+
+npm install babel-plugin-component -D
+然后，将 .babelrc 修改为：（是往里加内容，不是替换掉）
+
+{
+  "presets": [["es2015", { "modules": false }]],
+  "plugins": [
+    [
+      "component",
+      {
+        "libraryName": "element-ui",
+        "styleLibraryName": "theme-chalk"
+      }
+    ]
+  ]
+}
+接下来，如果你只希望引入部分组件，比如 Button 和 Select，那么需要在 main.js 中写入以下内容：
+
+import Vue from 'vue';
+import { Button, Select } from 'element-ui';
+import App from './App.vue';
+
+Vue.component(Button.name, Button);
+Vue.component(Select.name, Select);
+/* 或写为
+ * Vue.use(Button)
+ * Vue.use(Select)
+ */
+
+new Vue({
+  el: '#app',
+  render: h => h(App)
+});
+

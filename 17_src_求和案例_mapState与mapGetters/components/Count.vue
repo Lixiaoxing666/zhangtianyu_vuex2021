@@ -45,6 +45,7 @@
 				he:'sum',
 				ming:'school',
 				dizhi:'address'
+			//	 TODO categoryList: (state) => state.home.categoryList,  home是一个子store文件
 			}), */
 
 			//todo 借助mapState批量获取vuex中的数据（精简写法）  这样我们省略了this.$store.state.sum写法
